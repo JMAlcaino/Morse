@@ -12,11 +12,16 @@ MORSE
  Filename          : Morse_Vx.x.py
  Description       : Lights a led in fonction of a letter, a word or a sentence done by the user in Morse style
                      Using the GPIO with a led pinned on the pin 11 (GPIO17)
-                     This program is for all Raspberry Pi with 40 pins GPIO                   
+                     This program is for all Raspberry Pi with 40 pins GPIO 
+                     
  Author           : Alcaïno Jean-Marc
+ 
  First version    : 2023/12/18
- Last changes     : 2024/02/23                                                                                
+ 
+ Last changes     : 2024/02/23
+ 
  Last version     : V 1.6   Algorythms test version for developpement. GPIO activation by the gpiozerolibrary instead of rpi-gpio
+
 
  Versions notes :
  
@@ -69,3 +74,22 @@ Future ehancements :
  - Add a buzzer to play the impulsion - Electronic ehancement
  - Decode a real radio reception by SDR
  - GUI for the user
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+MORSE_DESKTOP
+
+ Filename          : Morse_desktop_Vx.x.py
+ 
+ Description       : Code, decode or learn Morse's code with some visual and auditive interface on any OS
+ 
+ Author            : Alcaïno Jean-Marc
+ 
+ First version     : 2024/03/26
+ 
+ Last changes      : 2024/03/27
+ 
+ Last version      : V 1.0   First coding steps using Morse_Vx.x algorythms
+
+
+ WORK IN PROGRESS
