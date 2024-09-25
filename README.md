@@ -79,7 +79,7 @@ Future ehancements :
 
 MORSE_DESKTOP
 
- Filename          : Morse_desktop_Vx.x.py
+ Filename          : Desktop_Morse_Vx.x.py
  
  Description       : Code, decode or learn Morse's code with some visual and auditive interface on any OS
  
@@ -90,6 +90,7 @@ MORSE_DESKTOP
  Last changes      : 2024/03/27
  
  Last version      : V 1.0   First coding steps using Morse_Vx.x algorythms
+                     Plays sounds as real Morse code 
 
 
  WORK IN PROGRESS
