@@ -6,3 +6,7 @@ This folder contains all files wich are used in the prinipal applications
 - Pictures
 - Links
 - etc...
+
+
+Morse_point et Morse_trait are the sounds to be used in the program for the '.' and the '-' in Morse Code.
+
