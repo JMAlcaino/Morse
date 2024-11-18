@@ -22,6 +22,8 @@ MORSE
  
  Last version     : V 1.6   Algorythms test version for developpement. GPIO activation by the gpiozerolibrary instead of rpi-gpio
 
+ WORK IN PROGRESS
+
 
  Versions notes :
  
@@ -87,10 +89,10 @@ MORSE_DESKTOP
  
  First version     : 2024/03/26
  
- Last changes      : 2024/03/27
+ Last changes      : 2024/11/18
  
- Last version      : V 1.0   First coding steps using Morse_Vx.x algorythms
-                     Plays sounds as real Morse code 
+ Last version      : V 2.03 
+                     Plays sounds as real Morse code - Morse sentence when decoding - Timer for the decoding's duration
 
 
  WORK IN PROGRESS
