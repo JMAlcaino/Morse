@@ -92,7 +92,7 @@ MORSE_DESKTOP
  Last changes      : 2024/11/18
  
  Last version      : V 2.03 
-                     Plays sounds as real Morse code - Morse sentence when decoding - Timer for the decoding's duration
+                     Plays sounds as real Morse code - Morse sentence when coding - Timer for the elapse time in coding.
 
 
  WORK IN PROGRESS
