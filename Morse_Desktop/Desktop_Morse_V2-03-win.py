@@ -10,7 +10,7 @@
                 Learning mode available to test the knowledges.
  author       : Alcaïno Jean-Marc                                                                          
  modification : 2024/11/18                                                                            
- version      : V 2.03
+ version      : V 2.03-win
  
 ############################################################################################################
 
@@ -51,7 +51,9 @@
  * V 2.03 :
  - Timer to show how many times is coding's duration
  
-
+ * V 2.03-win :
+ - Windows 11 version  : the linux version is modified here to be executed on Windows
+ - The Morse sounds path is modified to be reached from the D: volume. BE CAREFUL ! The path should be used with a "/" instead of a "\" --> ex: "D:/Python/Morse/Needed/Morse_point.wav"
 
 ############################################################################################################
 
@@ -86,7 +88,7 @@ pygame.init()                                   # 'pygame' initialisation
 # Variables definitions
 
 point = pygame.mixer.Sound("D:/Python/Morse/Needed/Morse_point.wav")   # Load the 'point' Morse sound in the pygame's mixer module
-line = pygame.mixer.Sound("D:/Python/Morse/Needed/1Morse_trait.wav")    # Load the 'line' Morse sound in the pygame's mixer module
+line = pygame.mixer.Sound("D:/Python/Morse/Needed/Morse_trait.wav")    # Load the 'line' Morse sound in the pygame's mixer module
 tmr = 0                                         # Set the variable 'tmr' - This variable will be set as global in the 'code()' function
                                                 # and used to calculate the coding's elpase time
 
