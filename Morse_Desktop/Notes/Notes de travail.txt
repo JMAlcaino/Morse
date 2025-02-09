@@ -1,1 +1,3 @@
 Notes de travail sur le programme : Desktop_Morse
+
+--> Mise en place d'un fichier Vxx-yy-win qui pourra être utilisé et modifié sur le PC Windows au lieu de sur Linux

@@ -5,3 +5,8 @@ This folder contains all the versions of the  Morse coding and decoding GUI appl
 It contains some help and research scripts in the Utils folder
 
 In developpement
+
+
+######################################################################################################
+
+--> All files with a version noted Vxx-yy-win are to be executed on the Window 11 PC instead of the Linux PC
