@@ -59,17 +59,17 @@
 
 Future ehancements :  '-' = to be done    '/' = in developpement    'X' = finished
 
- X Coding and decoding words  --> in dev with the 'def code(ltr):' function
- X Coding and decoding sentences --> in dev with the 'def code(ltr):' function
- X Write the coded sentence in Morse signs
- X Showing the time for coding and decoding 
- - Morse code learning mode.
- - Keyboard/Mouse impulsions coding/decoding (GUI dev)
- - Write the impulsed code in real characters on the same line
- x Play a sound when coding in Morse
- - Play a sound when key/mouse is pressed to input something to decode or in learning mode (GUI dev)
- - Decode a real radio reception by SDR
- - GUI for the user
+ [X] Coding and decoding words  --> in dev with the 'def code(ltr):' function
+ [X] Coding and decoding sentences --> in dev with the 'def code(ltr):' function
+ [X] Write the coded sentence in Morse signs
+ [X] Showing the time for coding and decoding 
+ [-] Morse code learning mode.
+ [-] Keyboard/Mouse impulsions coding/decoding (GUI dev)
+ [-] Write the impulsed code in real characters on the same line
+ [x] Play a sound when coding in Morse
+ [-] Play a sound when key/mouse is pressed to input something to decode or in learning mode (GUI dev)
+ [-] Decode a real radio reception by SDR
+ [-] GUI for the user
  
 ############################################################################################################
 

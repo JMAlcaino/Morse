@@ -1,0 +1,104 @@
+Notes de travail sur le programme : Desktop_Morse
+
+#########################################################################################################################################################################################################
+
+Versions notes :
+
+ * V 1.0 :
+ - Keep the same program (Morse_V1-6-10_Test) as a base for developping.
+ 
+ - ON and OFF printed to study the effect of time.sleep() method on durations vs Morse code and their display for testing
+    -> '.'  = 0.25"
+    
+    -> '-'  = 0.50" (same as two '.')
+    
+    -> ' '  = 0.25" (gap between two impulsions for a letter -> same as one '.')
+    
+    -> between two letters  = 0.75" (gap between two letters of the same word -> same as three '.')
+    
+    -> between two words = 1.50" (space between two words -> same as seven '.')
+    
+ - new 'code()' function which can code a letter or a word or a sentence. Only one function for the Morse coding
+ - space, ponctuations and signs added to the 'morse_code' dictionnary. The space ' ' is same as 7 '.' --> 1.50" time sleep
+ 
+ - More simple code which use only one morse code function even the user enter a letter, a word or a sentence.
+ 
+ 
+ * V 2.0 :
+ - The 'pygame' library is used to play the Morse Code sounds
+ 
+ 
+ * V 2.01 :
+ - Print '.' and '-' of the Morse Code and the character associated
+ 
+ 
+ * V 2.02 :
+ - Suppression of the unused menus and associated fonctions. Obsolete ones since the 'code' function is able to code anything.
+ - Morse coding sentence is writen on a single with official Morse Code's separators.
+ 
+ * V 2.03 :
+ - Timer to show how many times is coding's duration
+ 
+ * V 2.03-win :
+ - Windows 11 version  : the linux version is modified here to be executed on Windows
+ - The Morse sounds path is modified to be reached from the D: volume. BE CAREFUL ! The path should be used with a "/" instead of a "\" --> ex: "D:/Python/Morse/Needed/Morse_point.wav"
+
+#############################################################################################################################################################################################################################
+
+To do list and future ehancements
+
+To do list :  '-' = to be done    '/' = in developpement    'X' = finished
+
+ [X] Coding and decoding words  --> in dev with the 'def code(ltr):' function
+ [X] Coding and decoding sentences --> in dev with the 'def code(ltr):' function
+ [X] Write the coded sentence in Morse signs
+ [X] Showing the time for coding and decoding 
+ [-] Morse code learning mode.
+ [-] Keyboard/Mouse impulsions coding/decoding (GUI dev)
+ [-] Write the impulsed code in real characters on the same line
+ [x] Play a sound when coding in Morse
+ [-] Play a sound when key/mouse is pressed to input something to decode or in learning mode (GUI dev)
+ [-] Decode a real radio reception by SDR
+ [-] GUI for the user
+ 
+##############################################################################################################################################################################################################################
+
+Developper notes / Mes notes de développement
+
+* code pour récupérer les éléments de la liste associée à la lettre
+ # Value of a letter/number given by the user
+ print('* Morse coding of a letter/number given by    the user \n')
+ letter = input('letter/number ?..')
+ if letter in morse_code:
+     code_list = morse_code.get(letter)
+     print (letter,'-->',code_list)
+     for code in code_list:
+         print (code, end="  ")
+    
+ else:
+    print ('Invalid Input')
+
+------------------------------------------------
+
+* Faire une fonction(def) pour le test y/n ça sera plus facile pour les choix finaux de chaque modules de coding/decoding. 
+ --> ok ça marche avec le menu de départ en fonction...
+
+------------------------------------------------
+
+* Commenter les nouvelles fonctions et les différents éléments de code faits
+ --> fait
+
+------------------------------------------------
+
+* Faire la fonction de codage d'un mot. Attention aux intervalles entre chaque lettre.
+
+------------------------------------------------
+
+* Voir utilisation de la Lib gpiozero à la place de rpi.gpio pour la compatibilité avec le Rasprberry 5 --> conversion du programme avec cette lib...
+ --> Voir les versions du programme prévues pour fonctionner avec le montage électronique.
+
+------------------------------------------------
+
+* --> Mise en place d'un fichier Vxx-yy-win qui pourra être utilisé et modifié sur le PC Windows au lieu de sur Linux
+
+------------------------------------------------
