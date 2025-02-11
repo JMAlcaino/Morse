@@ -63,7 +63,7 @@ To do list :  '-' = to be done    '/' = in developpement    'X' = finished
  
 ##############################################################################################################################################################################################################################
 
-Developper notes / Mes notes de développement
+Developper notes / Mes notes de développement :
 
 * code pour récupérer les éléments de la liste associée à la lettre
  # Value of a letter/number given by the user
@@ -102,3 +102,9 @@ Developper notes / Mes notes de développement
 * --> Mise en place d'un fichier Vxx-yy-win qui pourra être utilisé et modifié sur le PC Windows au lieu de sur Linux
 
 ------------------------------------------------
+
+* Pour développer le mode d'apprentissage du code Morse :
+  --> Recherche d'une solution avec un dictionnaire sur Internet pour extraire un mot au hasard (recherche avec ChatGPT et GitHub Copilot)
+  --> La solution serait d'utiliser une API qui fournirait ce mot 
+  --> Le fichier Test_API.py situé dans le dossier 'Utils' sert de base à cette proction d'un mot aléatoirement.
+  --> le programme devra utiliser le mot fourni aléatoirement pour que l'utilisateur puisse s'entraîner en Code Morse avec.
