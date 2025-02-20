@@ -108,3 +108,7 @@ Developper notes / Mes notes de développement :
   --> La solution serait d'utiliser une API qui fournirait ce mot 
   --> Le fichier Test_API.py situé dans le dossier 'Utils' sert de base à cette proction d'un mot aléatoirement.
   --> le programme devra utiliser le mot fourni aléatoirement pour que l'utilisateur puisse s'entraîner en Code Morse avec.
+
+  // Abandon de l'utilisation d'une API pour trouver un mot au hasard. 
+  --> Mise en place d'un fichier en .txt contenant une liste de mots dans lequel le programme ira chercher un mot au hasard.
+      Cela me permettra de me familiariser avec l'ouverture, la lecture et la fermeture d'un fichier externe au programme ce qui sera toujours utile ultérieurement. 
