@@ -5,6 +5,8 @@ The project comes with two applications
 - A Python program/application using the Raspberry Pi 5's GPIO interface using an electronic board blinking a led.
 - A Python program/application working on the desktop of any OS. The interface is done with the keyboard ou the mouse.
 
+WORK IN PROGRESS
+
 ----------------------------------------------------------------------------------------------------------------------------
 
 MORSE
