@@ -11,6 +11,8 @@
  author       : Alcaïno Jean-Marc                                                                          
  modification : 2024/11/18                                                                            
  version      : V 2.03-win
+
+ See the file D:\Python\Morse\Morse_Desktop\Notes\Notes_de_travail.txt for more informations about the project.
  
 ############################################################################################################
 
@@ -213,13 +215,13 @@ def try_again():                                            # Function for the c
             print("\n--> Your choice is invalid, try again...\n")
             break
         
-def sec2ydhms(ss):                                           # Fonction de conversion des secondes en années, jours, heures, minutes, secondes
-                                                             # utilisant la fonction native 'divmod' --> (quotient, reste) = (valeur 1 / valeur 2)
-    (yy, ss) = divmod(ss, 31536000)                          # (aa 'années', ss (secondes) = divmod(ss (nbr de secondes au départ / 31536000 (nombre de secondes dans un an))                         
-    (dd, ss) = divmod(ss, 86400)                             # 86400 --> nombre de secondes dans  un jour
-    (hh, ss) = divmod(ss, 3600)                              # 3600 --> nombre de secondes dans une heure
-    (mm, ss) = divmod(ss, 60)                                # 60 nombre de secondes dans une minute
-    return (yy, dd, hh, mm, ss)                              # Renvoie le nombre d'années, de jours, d'heures, de minutes et de secondes
+def sec2ydhms(ss):                                           # Function to convert seconds into years, days, hours, minutes, seconds
+                                                             # using the native 'divmod' function --> (quotient, remainder) = (value 1 / value 2)
+    (yy, ss) = divmod(ss, 31536000)                          # (yy 'years', ss (seconds) = divmod(ss (initial number of seconds / 31536000 (number of seconds in a year))                         
+    (dd, ss) = divmod(ss, 86400)                             # 86400 --> number of seconds in a day
+    (hh, ss) = divmod(ss, 3600)                              # 3600 --> number of seconds in an hour
+    (mm, ss) = divmod(ss, 60)                                # 60 --> number of seconds in a minute
+    return (yy, dd, hh, mm, ss)                              # send back the values of years, days, hours, minutes and seconds
 
 
         
@@ -305,50 +307,4 @@ if __name__ == '__main__':                                   # Program main entr
     print ('Program is starting ... \n')
     print()
     
-    menu()                                                   # Execute the 'menu' function --> choice of the activity
-    
-
-
-
-
-
-'''
-Developper notes / Mes notes de développement
-
-* code pour récupérer les éléments de la liste associée à la lettre
- # Value of a letter/number given by the user
- print('* Morse coding of a letter/number given by    the user \n')
- letter = input('letter/number ?..')
- if letter in morse_code:
-     code_list = morse_code.get(letter)
-     print (letter,'-->',code_list)
-     for code in code_list:
-         print (code, end="  ")
-    
- else:
-    print ('Invalid Input')
-
-------------------------------------------------
-
-* Faire une fonction(def) pour le test y/n ça sera plus facile pour les choix finaux de chaque modules de coding/decoding. 
- --> ok ça marche avec le menu de départ en fonction...
-
-------------------------------------------------
-
-* Commenter les nouvelles fonctions et les différents éléments de code faits
- --> fait
-
-------------------------------------------------
-
-* Faire la fonction de codage d'un mot. Attention aux intervalles entre chaque lettre.
-
-------------------------------------------------
-
-* Voir utilisation de la Lib gpiozero à la place de rpi.gpio pour la compatibilité avec le Rasprberry 5 --> conversion du programme avec cette lib...
- --> Voir les versions du programme prévues pour fonctionner avec le montage électronique.
-
-------------------------------------------------
-
-'''
-
-
+    menu()                                                   # Execute the 'menu' function --> choice of the activity to do
