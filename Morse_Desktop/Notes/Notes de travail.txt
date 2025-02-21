@@ -1,3 +1,124 @@
 Notes de travail sur le programme : Desktop_Morse
 
---> Mise en place d'un fichier Vxx-yy-win qui pourra être utilisé et modifié sur le PC Windows au lieu de sur Linux
+#########################################################################################################################################################################################################
+
+Versions notes :
+
+ * V 1.0 :
+ - Garder le même programme (Morse_V1-6-10_Test) comme base pour le développement.
+ 
+ - Impression de ON et OFF pour étudier l'effet de la méthode time.sleep() sur les durées par rapport au code Morse et leur affichage pour les tests
+    -> '.'  = 0.25"
+    
+    -> '-'  = 0.50" (équivalent à deux '.')
+    
+    -> ' '  = 0.25" (écart entre deux impulsions pour une lettre -> équivalent à un '.')
+    
+    -> entre deux lettres  = 0.75" (écart entre deux lettres du même mot -> équivalent à trois '.')
+    
+    -> entre deux mots = 1.50" (espace entre deux mots -> équivalent à sept '.')
+    
+ - nouvelle fonction 'code()' qui peut coder une lettre, un mot ou une phrase. Une seule fonction pour le codage Morse
+ - espace, ponctuations et signes ajoutés au dictionnaire 'morse_code'. L'espace ' ' est équivalent à 7 '.' --> 1.50" de pause
+ 
+ - Code plus simple qui utilise une seule fonction de codage Morse même si l'utilisateur entre une lettre, un mot ou une phrase.
+ 
+ 
+ * V 2.0 :
+ - La bibliothèque 'pygame' est utilisée pour jouer les sons du code Morse
+ 
+ 
+ * V 2.01 :
+ - Impression des '.' et '-' du code Morse et du caractère associé
+ 
+ 
+ * V 2.02 :
+ - Suppression des menus inutilisés et des fonctions associées. Obsolètes depuis que la fonction 'code' peut coder n'importe quoi.
+ - La phrase codée en Morse est écrite sur une seule ligne avec les séparateurs officiels du code Morse.
+ 
+ * V 2.03 :
+ - Minuteur pour afficher la durée du codage
+ 
+ * V 2.03-win :
+ - Version Windows 11 : la version Linux est modifiée ici pour être exécutée sur Windows
+ - Le chemin des sons Morse est modifié pour être accessible depuis le volume D:. ATTENTION ! Le chemin doit être utilisé avec un "/" au lieu d'un "\" --> ex : "D:/Python/Morse/Needed/Morse_point.wav"
+
+#############################################################################################################################################################################################################################
+
+Liste des tâches et améliorations futures
+
+Liste des tâches :  '-' = à faire    '/' = en développement    'X' = terminé
+
+ [X] Codage et décodage des mots  --> en dev avec la fonction 'def code(ltr):'
+ [X] Codage et décodage des phrases --> en dev avec la fonction 'def code(ltr):'
+ [X] Écrire la phrase codée en signes Morse
+ [X] Affichage du temps de codage et de décodage 
+ [/] Mode d'apprentissage du code Morse.
+ [/] Mot aléatoire pour la pratique en mode apprentissage.
+ [-] Codage/décodage des impulsions clavier/souris (développement GUI)
+ [-] Écrire le code impulsé en caractères réels sur la même ligne
+ [x] Jouer un son lors du codage en Morse
+ [-] Jouer un son lorsque la touche/souris est pressée pour entrer quelque chose à décoder ou en mode apprentissage (développement GUI)
+ [-] Décoder une réception radio réelle par SDR
+ [-] GUI pour l'utilisateur
+ 
+##############################################################################################################################################################################################################################
+
+Notes de développement :
+
+* Code pour récupérer les éléments de la liste associés à la lettre :
+
+ # Valeur d'une lettre/numéro donnée par l'utilisateur
+ print('* Codage Morse d'une lettre/numéro donnée par l'utilisateur \n')
+ letter = input('lettre/numéro ?..')
+ if letter in morse_code:
+     code_list = morse_code.get(letter)
+     print (letter,'-->',code_list)
+     for code in code_list:
+         print (code, end="  ")
+    
+ else:
+    print ('Entrée invalide')
+
+------------------------------------------------
+
+* Faire une fonction (def) pour le test y/n ce sera plus facile pour les choix finaux de chaque module de codage/décodage. 
+ --> ok ça marche avec le menu de départ en fonction...
+
+------------------------------------------------
+
+* Commenter les nouvelles fonctions et les différents éléments de code faits
+ --> fait
+
+------------------------------------------------
+
+* Faire la fonction de codage d'un mot. Attention aux intervalles entre chaque lettre.
+ --> fait
+
+------------------------------------------------
+
+* Voir utilisation de la bibliothèque gpiozero à la place de rpi.gpio pour la compatibilité avec le Raspberry 5 --> conversion du programme avec cette bibliothèque...
+ --> Voir les versions du programme prévues pour fonctionner avec le montage électronique.
+
+------------------------------------------------
+
+* --> Mise en place d'un fichier 'Vxx-yy-win' qui pourra être utilisé et modifié sur le PC Windows au lieu du PC Linux.
+
+------------------------------------------------
+
+* Pour développer le mode d'apprentissage du code Morse :
+  --> Recherche d'une solution avec un dictionnaire sur Internet pour extraire un mot au hasard (recherche avec ChatGPT et GitHub Copilot)
+  --> La solution serait d'utiliser une API qui fournirait ce mot 
+  --> Le fichier Test_API.py situé dans le dossier 'Utils' sert de base à cette production d'un mot aléatoirement.
+  --> Le programme devra utiliser le mot fourni aléatoirement pour que l'utilisateur puisse s'entraîner en code Morse avec.
+
+  // Abandon de l'utilisation d'une API pour trouver un mot au hasard. 
+  --> Mise en place d'un fichier en .txt contenant une liste de mots dans lequel le programme ira chercher un mot au hasard.
+      Cela me permettra de me familiariser avec l'ouverture, la lecture et la fermeture d'un fichier externe au programme ce qui sera toujours utile ultérieurement. 
+
+  --> Fichiers créés en français et en anglais 'french_words_list.txt' et 'english_words_list.txt'
+      Listes de 600 mots générés aléatoirement par ChatGPT.
+
+  --> Les scripts 'Test_Random_Word_txt_fr.py' et 'Test_Random_Word_txt_eng.py' fonctionnent pour le choix aléatoire d'un mot dans les fichiers .txt.
+
+------------------------------------------------
