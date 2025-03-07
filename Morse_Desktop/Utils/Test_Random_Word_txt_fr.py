@@ -16,5 +16,5 @@ def choisir_mot_aleatoire(chemin_fichier):
     return random.choice(mots)
 
 # Exemple d'utilisation : suppose que ton fichier 'mots_francais.txt' se trouve dans le même répertoire que ton script.
-mot_aleatoire = choisir_mot_aleatoire('D:/Python/Morse/Needed/french_words_list.txt')
+mot_aleatoire = choisir_mot_aleatoire('D:/Python/Morse/Needed/processed_french_1000_words.txt')
 print("Mot choisi :", mot_aleatoire)

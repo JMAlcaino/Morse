@@ -14,12 +14,12 @@ def choose_random_word(file_path):
         words = file.read().splitlines()
 
     # Tests...
-    #   print (words) --> to verify that the list is well created
-    #   print (type(words)) --> to verify that the type of 'words' is a list
+    #print (words) #--> to verify that the list is well created
+    #print (type(words)) #--> to verify that the type of 'words' is a list
 
     # Returns a randomly chosen word from the list
     return random.choice(words)
 
 # Main
-random_word = choose_random_word('D:/Python/Morse/Needed/english_words_list.txt')  # Send the path of the file containing the list of words to the function
+random_word = choose_random_word('D:/Python/Morse/Needed/processed_english_1000_words.txt')  # Send the path of the file containing the list of words to the function
 print("Chosen word:", random_word)

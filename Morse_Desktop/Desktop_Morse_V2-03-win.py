@@ -9,10 +9,14 @@
                 Use of the mouse or the keyboard to enter Morse code.
                 Learning mode available to test the knowledges.
  author       : Alcaïno Jean-Marc                                                                          
- modification : 2024/11/18                                                                            
+ modification : 2025/02/21                                                                            
  version      : V 2.03-win
 
- See the file D:\Python\Morse\Morse_Desktop\Notes\Notes_de_travail.txt for more informations about the project.
+ GitHub       : https://github.com/JMAlcaino/Morse/tree/main/Morse_Desktop
+ Author GitHub: https://github.com/JMAlcaino
+
+ See the file https://github.com/JMAlcaino/Morse/blob/main/Morse_Desktop/Notes/Working_notes.txt for more informations about the project.
+ Voir le fichier https://github.com/JMAlcaino/Morse/blob/main/Morse_Desktop/Notes/Notes_de_travail.txt pour plus d'informations sur le projet.
  
 ############################################################################################################
 
@@ -65,7 +69,8 @@ Future ehancements :  '-' = to be done    '/' = in developpement    'X' = finish
  [X] Coding and decoding sentences --> in dev with the 'def code(ltr):' function
  [X] Write the coded sentence in Morse signs
  [X] Showing the time for coding and decoding 
- [-] Morse code learning mode.
+ [/] Morse code learning mode.
+ [/] Random word choice for the learning mode (english or french)
  [-] Keyboard/Mouse impulsions coding/decoding (GUI dev)
  [-] Write the impulsed code in real characters on the same line
  [x] Play a sound when coding in Morse
