@@ -95,6 +95,7 @@ environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'     # Hide the 'pygame's prompt when
 import time                                     # Import 'time' library
 import sys                                      # Import 'sys' library  --> maybe not used in the desktop version (to be seen)
 import pygame                                   # Import 'pygame' library to use the music's playing methods
+import random
 
 pygame.init()                                   # 'pygame' initialisation
 
@@ -234,6 +235,12 @@ def sec2ydhms(ss):                                           # Function to conve
     (mm, ss) = divmod(ss, 60)                                # 60 --> number of seconds in a minute
     return (yy, dd, hh, mm, ss)                              # send back the values of years, days, hours, minutes and seconds
 
+def choose_random_word(file_path):                           # Function to choose a random word from a list of words
+
+    with open(file_path, 'r', encoding='utf-8') as file:     # Reads all lines and stores them in a list (each line represents a word)    
+        words = file.read().splitlines()
+    return random.choice(words)                              # Returns a randomly chosen word from the list
+
 
         
 def code(character):                                         # Function to code a character from a single letter, a word or a sentence
@@ -279,13 +286,27 @@ def code_ltr():                                              # Function to code 
         try_again()
                 
              
-def impulse_ltr():                                           # Function to code in Morse a letter impulsed by the user with the button (to be developped)
-    print('\n Impulse a letter - Not available for now, in developpement...\n')
+def learn_mode():                                           # Function to code in Morse a letter impulsed by the user with the button (to be developped)
+    print('\n Impulse a letter is in developpement...\n\n')
+    language = input('Choose the language for the Morse code : 1 - English / 2 - French...')
+    if language == '1':
+        print('\n English language choosen...')
+        word_file = 'D:/Python/Morse/Needed/processed_english_1000_words.txt' # Path to the file containing the list of english words 
+    elif language == '2':
+        print('\n French language choosen...')
+        word_file = 'D:/Python/Morse/Needed/processed_french_1000_words.txt' # Path to the file containing the list of french words
+    else:
+        print('\n Your choice is invalid, try again...')
+        learn_mode()
+
+    random_word = choose_random_word(word_file)  # Send the path of the file containing the list of words to the function
+    print("\n Chosen word:", random_word)  
     return None
 
 
-def learn_mode():                                            # Function to learn Morse coding/decoding
+def impulse_ltr():                                            # Function to learn Morse coding/decoding
     print('\n Learning Mode - Not available for now, in developpement...\n')
+
     return None
 
 
