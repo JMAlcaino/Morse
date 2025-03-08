@@ -47,7 +47,8 @@ Versions notes:
  - Begining of the 'learning mode' development
  - Random word choice for the learning mode (english or french) function included
  - The .txt files used for the random word choice are in the 'Needed' folder in the 'Morse' folder - They need to be in the same folder as the program or the path should be modified in the program
-
+ - Some bugs fixed
+ - Functions rewrited under the Python's PEP8 rules
 
 #############################################################################################################################################################################################################################
 
@@ -60,7 +61,7 @@ To do list: '-' = to be done    '/' = in development    'X' = finished
  [X] Write the coded sentence in Morse signs
  [X] Showing the time for coding and decoding 
  [/] Morse code learning mode.
- [/] Random word for the practice in the learning mode.
+ [X] Random word for the practice in the learning mode.
  [-] Keyboard/Mouse impulses coding/decoding (GUI dev)
  [-] Write the impulsed code in real characters on the same line
  [x] Play a sound when coding in Morse

@@ -65,6 +65,8 @@
  - Begining of the 'learning mode' development
  - Random word choice for the learning mode (english or french) function included
  - The .txt files used for the random word choice are in the 'Needed' folder in the 'Morse' folder - They need to be in the same folder as the program or the path should be modified in the program
+ - Some bugs fixed
+ - Functions rewrited under the Python's PEP8 rules
 
 ############################################################################################################
 
@@ -75,7 +77,7 @@ Future ehancements :  '-' = to be done    '/' = in developpement    'X' = finish
  [X] Write the coded sentence in Morse signs
  [X] Showing the time for coding and decoding 
  [/] Morse code learning mode.
- [/] Random word choice for the learning mode (english or french)
+ [X] Random word choice for the learning mode (english or french) from a list of words in a .txt file
  [-] Keyboard/Mouse impulsions coding/decoding (GUI dev)
  [-] Write the impulsed code in real characters on the same line
  [x] Play a sound when coding in Morse
@@ -89,6 +91,7 @@ Future ehancements :  '-' = to be done    '/' = in developpement    'X' = finish
  '''
 
 # Libraries import
+
 from os import environ                          # Import 'os' 'environ' method to avoid the prompt display from 'pygagme' library 
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'     # Hide the 'pygame's prompt when loaded
 
@@ -99,14 +102,18 @@ import random
 
 pygame.init()                                   # 'pygame' initialisation
 
-# Variables definitions
+
+# Constants definitions
 
 point = pygame.mixer.Sound("D:/Python/Morse/Needed/Morse_point.wav")   # Load the 'point' Morse sound in the pygame's mixer module
 line = pygame.mixer.Sound("D:/Python/Morse/Needed/Morse_trait.wav")    # Load the 'line' Morse sound in the pygame's mixer module
 tmr = 0                                         # Set the variable 'tmr' - This variable will be set as global in the 'code()' function
-                                                # and used to calculate the coding's elpase time
+                                                # and used to calculate the coding's elapse time
+
 
 # Morse Code dictonnary definition
+# The Morse Code's dictionary contains the letters, numbers, ponctuations and signs as keys and the Morse code as values
+
 morse_code = {
        'a':[1,1,2,2],
        'b':[2,2,1,2],
@@ -163,18 +170,30 @@ morse_code = {
        '$':[1,1,1,2,1,1,2],
        '@':[1,2,2,1,2,1],
        ' ':[]}
-    
+
+
 # Functions definition
 
-def generique(title):                                       # Function to display the script title even how long it is
+def generique(title):
+    """
+    Display the title of the script even how long it is
+
+    :param title: the title of the script
+    """
     lg = len(title) + 8                                     # 3 spaces before and after the title + 2 for the '#' at the beginning and at the end of the table
     print(lg * "#")
     print("#" + (lg - 2) * " " + "#")
     print("#   " + title + "   #")
     print("#" + (lg - 2) * " " + "#")
     print(lg * "#")
-    
-def menu_title(title):                                      # Function to display the menu title even how long it is
+
+
+def menu_title(title):
+    """
+    Display the title of the menu even how long it is
+
+    :param title: the title of the menu
+    """
     lg = len(title) + 8                                     # 3 spaces before and after the title + 2 for the '°' at the beginning and at the end of the table
     print()
     print(lg * "°")
@@ -182,8 +201,12 @@ def menu_title(title):                                      # Function to displa
     print("°   " + title + "   °")
     print("°" + (lg - 2) * " " + "°")
     print(lg * "°")
-   
+
+
 def menu():
+    """
+    Display the menu of the script
+    """
     while True:                                             # While True loop for the menu choice                       
         try:                                                # Exception try for the choice menu
             print ('\n   Choose an activity in this menu... \n')
@@ -208,8 +231,12 @@ def menu():
                 continue
         except ValueError:                                  # Choice's error
             print("\n--> Your choice is invalid, try again...\n")
-    
-def try_again():                                            # Function for the choice option to continue or not
+
+
+def try_again():
+    """
+    Ask the user if he wants to continue or not
+    """
     print()
     print()
     while True:
@@ -226,8 +253,12 @@ def try_again():                                            # Function for the c
         except ValueError:                                   # Choice's error
             print("\n--> Your choice is invalid, try again...\n")
             break
-        
-def sec2ydhms(ss):                                           # Function to convert seconds into years, days, hours, minutes, seconds
+
+
+def sec2ydhms(ss):
+    """
+    Convert seconds into years, days, hours, minutes and seconds
+    """
                                                              # using the native 'divmod' function --> (quotient, remainder) = (value 1 / value 2)
     (yy, ss) = divmod(ss, 31536000)                          # (yy 'years', ss (seconds) = divmod(ss (initial number of seconds / 31536000 (number of seconds in a year))                         
     (dd, ss) = divmod(ss, 86400)                             # 86400 --> number of seconds in a day
@@ -235,16 +266,27 @@ def sec2ydhms(ss):                                           # Function to conve
     (mm, ss) = divmod(ss, 60)                                # 60 --> number of seconds in a minute
     return (yy, dd, hh, mm, ss)                              # send back the values of years, days, hours, minutes and seconds
 
-def choose_random_word(file_path):                           # Function to choose a random word from a list of words
 
+def choose_random_word(file_path):                           # Function to choose a random word from a list of words
+    """
+    Choose a random word from a list of words
+
+    :param file_path: the path of the file containing the list of words
+    """
     with open(file_path, 'r', encoding='utf-8') as file:     # Reads all lines and stores them in a list (each line represents a word)    
         words = file.read().splitlines()
     return random.choice(words)                              # Returns a randomly chosen word from the list
 
-
-        
-def code(character):                                         # Function to code a character from a single letter, a word or a sentence
-    global tmr
+       
+def code(character):
+    """
+    Code a character from a single letter, a word or a sentence
+    calulate the time of coding
+    
+    :param character: the character to code
+    :return: the time of coding
+    """
+    global tmr                                               # Set the variable 'tmr' as global to be used in the function
     code_list = morse_code.get(character)                    # Extract the list of codes (values of 1 or 2) wich is value of the dictionnary key
     print ('', end=" ")                                      # This 'print' is needed to write the code on the same line
     if character == " ":                                     # Print a '/' if a space in detected in the sentence
@@ -267,7 +309,10 @@ def code(character):                                         # Function to code 
     return tmr                                               # Return the timer to 'code_letter' function
 
 
-def code_ltr():                                              # Function to code in Morse a letter, a word, a sentence or some numbers
+def code_ltr():
+    """
+    Code a letter, a word, a sentence or a number in Morse code
+    """
     while True:
         try:
             sentence = input("\n Imput either a letter, a word, a sentence or a number...")  # The user enter what he wants to becoded
@@ -286,46 +331,70 @@ def code_ltr():                                              # Function to code 
         try_again()
                 
              
-def learn_mode():                                           # Function to code in Morse a letter impulsed by the user with the button (to be developped)
-    print('\n Impulse a letter is in developpement...\n\n')
-    language = input('Choose the language for the Morse code : 1 - English / 2 - French...')
-    if language == '1':
-        print('\n English language choosen...')
-        word_file = 'D:/Python/Morse/Needed/processed_english_1000_words.txt' # Path to the file containing the list of english words 
-    elif language == '2':
-        print('\n French language choosen...')
-        word_file = 'D:/Python/Morse/Needed/processed_french_1000_words.txt' # Path to the file containing the list of french words
-    else:
-        print('\n Your choice is invalid, try again...')
-        learn_mode()
+def learn_mode():                                            # Function to code in Morse a letter impulsed by the user with the button (to be developped)
+    """
+    Learn the Morse code
 
-    random_word = choose_random_word(word_file)  # Send the path of the file containing the list of words to the function
-    print("\n Chosen word:", random_word)  
+    This function is in developpement
+
+    Will be used to code a letter impulsed by the user with the button or the mouse and display the Morse code on the screen
+    Verify the Morse code with the user's input and give the result and if the impulsed time is correct or not
+    The user can choose the language for the Morse code (English or French)
+    The user can retry if the word's Morse code is not correct
+    The user can chose to get the correct Morse code if he doesn't find it, get the next word or quit the learning mode
+
+    :return: None
+    """
+    print('\n The learning mode is in developpement...\n\n')
+    language = input('Choose the language for the Morse code : 1 - English / 2 - French...')  # Choose the language for the Morse code
+    word_files = {                                                                            # Dictionnary with the path of the files containing the list of words
+        '1': 'D:/Python/Morse/Needed/processed_english_1000_words.txt',
+        '2': 'D:/Python/Morse/Needed/processed_french_1000_words.txt'
+    }
+    word = word_files.get(language)                          # Extract the path of the file containing the list of words                            
+    if word:
+        print(f'\n {["English", "French"][int(language) - 1]} is chosen...')  # Display the chosen language
+        random_word = choose_random_word(word)               # Send the path of the file containing the list of words to the function
+        print("\n Chosen word:", random_word)                # Display the chosen word
+        print()
+    else:
+        print('\n Your choice is invalid, try again...')     # Error in the choice
+        learn_mode()
     return None
 
 
-def impulse_ltr():                                            # Function to learn Morse coding/decoding
-    print('\n Learning Mode - Not available for now, in developpement...\n')
+def impulse_ltr():
+    """
+    Impulse a letter in Morse code
+    
+    This function is in developpement
 
+    Will be used to code in Morse a letter impulsed by the user with the button or the mouse and display the Morse code on the screen
+
+    :return: None
+    """
+    print('\n Impulse a letter - Not available for now, in developpement...\n')
     return None
 
 
 def destroy():                                               # Quit choice function
+    """
+    Ask the user if he really wants to quit the program or not
+    """
     while True:
         try:
             print()
-            answer = input('Do you really want to quit ? y/n...')
-            if answer == 'y' or answer == 'Y':
+            answer = input('Do you really want to quit ? y/n...').lower()  # The .lower() method is used to avoid the case sensitive
+            if answer == 'y':
                 print('\nEnd of the Morse program. See you soon... \n')
                 sys.exit()                                   # Use the exit method from the sys library to quit
-            if answer == 'n' or answer == 'N':
+            elif answer == 'n':
                 print()
                 return None                                  # Restart the main program
+            else:
+                print("\n--> Your choice is invalid, try again...\n")
         except ValueError:                                   # Error in the choice
             print("\n--> Your choice is invalid, try again...\n")
-        else:
-            print("\n--> Your choice is invalid, try again...\n")
-            pass
         
 
 

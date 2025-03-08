@@ -47,6 +47,8 @@ Versions notes :
  - Début du développement du 'learning mode'
  - Fonction permettant de choisir au hasard un mot français ou anglais
  - Les fichiers .txt des listes de mots français ou anglais sont dans le répertoire 'needed' du répertoire 'Morse_Desktop'. Ils doiventêtre dans le même répertoire que le programme ou alors le chemin doit être modifié dans celui-ci.
+ - Correction de bugs
+ - Fonctions réécrites selon les règles du PEP8 de Python
 
 ############################################################################################################################################################################################################################################
 
