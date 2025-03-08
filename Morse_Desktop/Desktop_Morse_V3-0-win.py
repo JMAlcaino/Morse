@@ -9,8 +9,8 @@
                 Use of the mouse or the keyboard to enter Morse code.
                 Learning mode available to test the knowledges.
  author       : Alcaïno Jean-Marc                                                                          
- modification : 2025/02/21                                                                            
- version      : V 2.03-win
+ modification : 2025/03/08                                                                            
+ version      : V 3.0-win
 
  GitHub       : https://github.com/JMAlcaino/Morse/tree/main/Morse_Desktop
  Author GitHub: https://github.com/JMAlcaino
