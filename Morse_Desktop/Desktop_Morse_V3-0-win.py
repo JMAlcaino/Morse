@@ -2,7 +2,7 @@
 '''
 ############################################################################################################
  
- Filename     : Morse_desktop_v2-03.py                                                                              
+ Filename     : Morse_desktop_v3-0-win.py                                                                              
  Description  : This program is the same as the GPIO/Electronic version but works only on the desktop(console
                 or window). The GPIO and the electronic board are not used.
                 Coding and decoding Morse code from a letter/number, a word or a sentence on the screen.
