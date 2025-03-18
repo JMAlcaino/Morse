@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''
+"""
 ############################################################################################################
  
  Filename     : Morse_desktop_v3-0-win.py                                                                              
@@ -12,11 +12,11 @@
  modification : 2025/03/08                                                                            
  version      : V 3.0-win
 
- GitHub       : https://github.com/JMAlcaino/Morse/tree/main/Morse_Desktop
- Author GitHub: https://github.com/JMAlcaino
+ GitHub       :     https://github.com/JMAlcaino/Morse/tree/main/Morse_Desktop
+ Author GitHub :    https://github.com/JMAlcaino
 
- See the file https://github.com/JMAlcaino/Morse/blob/main/Morse_Desktop/Notes/Working_notes.txt for more informations about the project.
- Voir le fichier https://github.com/JMAlcaino/Morse/blob/main/Morse_Desktop/Notes/Notes_de_travail.txt pour plus d'informations sur le projet.
+ See the file  :    https://github.com/JMAlcaino/Morse/blob/main/Morse_Desktop/Notes/Working_notes.txt for more informations about the project.
+ Voir le fichier :  https://github.com/JMAlcaino/Morse/blob/main/Morse_Desktop/Notes/Notes_de_travail.txt pour plus d'informations sur le projet.
  
 ############################################################################################################
 
@@ -83,12 +83,13 @@ Future ehancements :  '-' = to be done    '/' = in developpement    'X' = finish
  [x] Play a sound when coding in Morse
  [-] Play a sound when key/mouse is pressed to input something to decode or in learning mode (GUI dev)
  [-] Decode a real radio reception by SDR
+ [-] Integration with the 'Cypher' project and particularly with the 'Enigma' program  -> https://github.com/JMAlcaino/Cypher
  [-] GUI for the user
  [-] Pack all the program and the needed elements in a single executable file 
  
 ############################################################################################################
 
- '''
+ """
 
 # Libraries import
 

@@ -67,6 +67,7 @@ Liste des tâches :  '-' = à faire    '/' = en développement    'X' = terminé
  [x] Jouer un son lors du codage en Morse
  [-] Jouer un son lorsque la touche/souris est pressée pour entrer quelque chose à décoder ou en mode apprentissage (développement GUI)
  [-] Décoder une réception radio réelle par SDR
+ [-] Intégration avec le projet 'Cypher et plus particulièrement le programme 'Enigma'  -> https://github.com/JMAlcaino/Cypher
  [-] GUI pour l'utilisateur
  [-] Empaqueter le programme et ses dépendances dans un éxécutable
  

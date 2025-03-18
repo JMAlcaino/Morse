@@ -11,7 +11,7 @@ WORK IN PROGRESS
 
 MORSE
 
- Filename          : Morse_Vx.x.py
+ Filename          : Morse_Vx-x-aaa.py
  Description       : Lights a led in fonction of a letter, a word or a sentence done by the user in Morse style
                      Using the GPIO with a led pinned on the pin 11 (GPIO17)
                      This program is for all Raspberry Pi with 40 pins GPIO 
@@ -20,14 +20,15 @@ MORSE
  
  First version    : 2023/12/18
  
- Last changes     : 2024/02/23
+ Last changes     : 2025/03/18
  
- Last version     : V 1.6   Algorythms test version for developpement. GPIO activation by the gpiozerolibrary instead of rpi-gpio
+ Last version (Rpi version) : V 1.6  -> Algorythms test version for developpement. GPIO activation by the gpiozerolibrary instead of rpi-gpio
+ 
 
  WORK IN PROGRESS
 
 
- Versions notes :
+ Versions notes (Rpi):
  
  V1.6 
  - More simple code which use only one morse code function even the user enter a letter, a word or a sentence.
@@ -91,10 +92,15 @@ MORSE_DESKTOP
  
  First version     : 2024/03/26
  
- Last changes      : 2024/11/18
+ Last changes      : 2025/03/18
  
- Last version      : V 2.03 
+ Last version      : V 3.0-win 
                      Plays sounds as real Morse code - Morse sentence when coding - Timer for the elapse time in coding.
 
 
  WORK IN PROGRESS
+
+
+Version notes : See program's Docstring in each file
+
+------------------------------------------------------------------------------------------------------------------------------------------

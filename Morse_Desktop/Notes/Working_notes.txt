@@ -67,6 +67,7 @@ To do list: '-' = to be done    '/' = in development    'X' = finished
  [x] Play a sound when coding in Morse
  [-] Play a sound when key/mouse is pressed to input something to decode or in learning mode (GUI dev)
  [-] Decode a real radio reception by SDR
+ [-] Integration with the 'Cypher' project and particularly with the 'Enigma' program  -> https://github.com/JMAlcaino/Cypher
  [-] User's GUI
  [-] Pack all the program and the needed elements in a single executable file
  
